@@ -1,0 +1,22 @@
+[DEFAULT]
+#Ban hosts for one hour:
+bantime = 600
+
+#Override /etc/fail2ban/jail.d/00-firewalld.conf:
+banaction = iptables-multiport
+
+
+[apache-nohacking]
+enbaled = true
+port = http
+filter = apache-nohacking
+logpath = /var/log/httpd/*access_log
+maxretry = 1
+
+[apache-osinjection]
+enabled = true
+port = http
+filyer = apache-osinjection
+logpath = /var/log/httpd/*access.log
+maxretry = 1
+
