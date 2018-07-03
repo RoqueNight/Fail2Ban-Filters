@@ -1,9 +1,9 @@
 # Fail2Ban-Filters
-Fail2Ban Filters to help Protect your Apache Web Servers from Scanners such as nmap , sqlmap , nikto , vega, and other Vulnerability Scanners by blocking the Source IP Address
+Fail2Ban Filters to help Protect your Apache Web Servers from Scanners such as nmap , sqlmap , nikto , vega, and other Vulnerability Scanners by Blocking the Source IP Address
 
 # What is Fail2ban?
 
-It is a type of HIPS (Host Intrusion Prevention System) that analyzes log files and compares them to filters to determine if the Source IP should be blocked based on behaviour or string matches
+It is a type of HIPS (Host Intrusion Prevention System) that analyzes log files and compares them to filters to determine if the Source IP should be Blocked based on behaviour or string matches
 
 # The Files
 
@@ -14,6 +14,8 @@ Contains the Custom Fail2ban Filters
 # Scripts
 
 Contains Scripts that enables you to easily see who is banned, Active Web Server Connections and Unban a Specific IP Address
+
+# Jail.local
 
 Example of the jail file that contains the custom filters 
 
@@ -49,7 +51,7 @@ mv jail.local jail.local.original
 mv Jail.local jail.local
 sudo service fail2ban restart
 ```
-# Adding the Custom Filters to your exsisting jail.local file
+# Adding the Custom Filters to your Existing jail.local file
 ```
 vi jail.local
 
@@ -80,7 +82,35 @@ Enter
 
 Note: Replace the logpath to */var/log/httpd/*access.log* when using CentOS
 
-Maxretry=1 - Means that if one match is met, the Source IP Will be Blocked , which will prevent the attacker from doing any other type of Information Gathering on your Web Server
+MaxRetry=1 - Means that if one match is met, the Source IP Will be Blocked , which will prevent the attacker from doing any other type of Information Gathering on your Web Server
+
+# Restarting fail2ban
+
+```
+sudo service fail2ban restart
+```
+
+# Viewing Banned IP Addresses
+
+```
+chmod +x View_Banned.sh
+./View_Banned.sh
+```
+
+# Unban a Specific IP Address
+```
+chmod +x Un_Ban_IP.sh
+./Un_Ban_IP.sh
+```
+# Viewing Active Unique Connections to your Web Server by IP Addresses
+```
+chmod +x Active_Connections.sh
+./Active_Connections.sh
+```
+
+
+    
+
 
 
 
