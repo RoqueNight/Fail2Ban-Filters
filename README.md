@@ -93,17 +93,20 @@ sudo service fail2ban restart
 # Viewing Banned IP Addresses
 
 ```
+cd /etc/fail2ban/
 chmod +x View_Banned.sh
 ./View_Banned.sh
 ```
 
 # Unban a Specific IP Address
 ```
+cd /etc/fail2ban/
 chmod +x Un_Ban_IP.sh
 ./Un_Ban_IP.sh
 ```
 # Viewing Active Unique Connections to your Web Server by IP Addresses
 ```
+cd /etc/fail2ban
 chmod +x Active_Connections.sh
 ./Active_Connections.sh
 ```
